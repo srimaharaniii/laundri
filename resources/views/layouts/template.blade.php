@@ -313,10 +313,53 @@
                                     <div class="col-md-4">
                                         <ul class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="index.html"> <i class="fa fa-home"></i> </a>
+                                                <a href="/penyerahan"> <i class="fa fa-home"></i> </a>
                                             </li>
                                             <li class="breadcrumb-item"><a href="#!">Bootstrap Tables</a>
                                             </li>
+                                                <li class="breadcrumb-item"><a href="#!">Basic Tables</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Page-header end -->
+                        <div class="pcoded-inner-content">
+                            <!-- Main-body start -->
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                    <!-- Page-body start -->
+                                    <div class="page-body">
+                                        <!-- Basic table card start -->
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>Basic Table</h5>
+                                                <div class="card-header-right">
+                                                    <ul class="list-unstyled card-option">
+                                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
+                                                        <li><i class="fa fa-window-maximize full-card"></i></li>
+                                                        <li><i class="fa fa-minus minimize-card"></i></li>
+                                                        <li><i class="fa fa-refresh reload-card"></i></li>
+                                                        <li><i class="fa fa-trash close-card"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="card-block table-border-style">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th scope="col">#</th>
+                                                                <th scope="col">Pelanggan</th>
+                                                                <th scope="col">Jenis</th>
+                                                                <th scope="col">Tgl Penyerahan</th>
+                                                                <th scope="col">Tgl Selesai</th>
+                                                                <th scope="col">Tgl Pengambilan</th>
+                                                                <th scope="col">Harga</th>
+                                                                <th scope="col">Berat</th>
+                                                            </tr>
+                                                        </thead>
 
 
                                         <!-- Background Utilities table end -->
