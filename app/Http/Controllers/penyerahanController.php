@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Penyerahan;
 use Illuminate\Http\Request;
 
 class penyerahanController extends Controller
@@ -11,7 +12,11 @@ class penyerahanController extends Controller
      */
     public function index()
     {
-        
+        // menampilkan data penyerahan
+        $nomor = 1;
+        $penyerahan = Penyerahan:: all();
+        return view('penyerahan.index', compact('penyerahan','nomor'));
+
     }
 
     /**
@@ -19,7 +24,8 @@ class penyerahanController extends Controller
      */
     public function create()
     {
-        //
+        // menampilkan form tambah
+         return view('penyerahan.form');
     }
 
     /**
@@ -27,7 +33,18 @@ class penyerahanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses tambah
+        $penyerahan = new Penyerahan();
+        $penyerahan->pelanggan = $request->pelanggan;
+        $penyerahan->jenis = $request->jenis;
+        $penyerahan->tgl_penyerahan = $request->tgl_penyerahan;
+        $penyerahan->tgl_selesai = $request->tgl_selesai;
+        $penyerahan->tgl_pengambilan = $request->tgl_pengambilan;
+        $penyerahan->harga = $request->harga;
+        $penyerahan->berat = $request->berat;
+        $penyerahan->save();
+
+         return redirect('/penyerahan');
     }
 
     /**

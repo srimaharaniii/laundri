@@ -17,10 +17,10 @@
     <meta name="keywords" content="bootstrap, bootstrap admin template, admin theme, admin dashboard, dashboard template, admin template, responsive" />
     <meta name="author" content="Codedthemes" />
     <!-- Favicon icon -->
-    <link rel="icon" href="{{ asset('/images/favicon.ico" type="image/x-icon')}}">
+    <link rel="icon" href="{{ asset('/images/favicon.ico') }}" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <!-- waves.css -->
-    <link rel="stylesheet" href="{{ asset('/pages/waves/css/waves.min.css" type="text/css" media="all')}}">
+    <link rel="stylesheet" href="{{ asset('/pages/waves/css/waves.min.css') }}" type="text/css" media="all">
     <!-- Required Fremwork -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/bootstrap/css/bootstrap.min.css')}}">
     <!-- waves.css -->
@@ -32,7 +32,7 @@
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/icon/icofont/css/icofont.css')}}">
     <!-- Style.css -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/jquery.mCustomScrollbar.css')}}">
 </head>
 
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                         <a href="index.html">
-                            <img class="img-fluid" src="{{ asset('/images/logo.png" alt="Theme-Logo')}}" />
+                            <img class="img-fluid" src="{{ asset('/images/logo.png') }}" alt="Theme-Logo" />
                         </a>
                         <a class="mobile-options waves-effect waves-light">
                             <i class="ti-more"></i>
@@ -331,41 +331,11 @@
                                 <div class="page-wrapper">
                                     <!-- Page-body start -->
                                     <div class="page-body">
+                                        @yield('content')
                                         <!-- Basic table card start -->
                                         <div class="card">
-                                            <div class="card-header">
-                                                <h5>Basic Table</h5>
-                                                <div class="card-header-right">
-                                                    <ul class="list-unstyled card-option">
-                                                        <li><i class="fa fa fa-wrench open-card-option"></i></li>
-                                                        <li><i class="fa fa-window-maximize full-card"></i></li>
-                                                        <li><i class="fa fa-minus minimize-card"></i></li>
-                                                        <li><i class="fa fa-refresh reload-card"></i></li>
-                                                        <li><i class="fa fa-trash close-card"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="card-block table-border-style">
-                                                <div class="table-responsive">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th scope="col">#</th>
-                                                                <th scope="col">Pelanggan</th>
-                                                                <th scope="col">Jenis</th>
-                                                                <th scope="col">Tgl Penyerahan</th>
-                                                                <th scope="col">Tgl Selesai</th>
-                                                                <th scope="col">Tgl Pengambilan</th>
-                                                                <th scope="col">Harga</th>
-                                                                <th scope="col">Berat</th>
-                                                            </tr>
-                                                        </thead>
 
 
-                                        <!-- Background Utilities table end -->
-                                    </div>
-                                    <!-- Page-body end -->
-                                </div>
                             </div>
                             <!-- Main-body end -->
 
