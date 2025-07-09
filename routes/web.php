@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\penyerahanController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -30,3 +31,11 @@ Route::get('/cektemplate', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Data penyerahan
+Route::get('/penyerahan',[penyerahanController::class,'index']);
+Route::get('/penyerahan/tambah', [PenyerahanController::class, 'create']);
+Route::post('/penyerahan', [PenyerahanController::class, 'store']);
+Route::get('/penyerahan/edit/{id}', [PenyerahanController::class, 'edit']);
+Route::put('/penyerahan/{id}', [PenyerahanController::class, 'update']);
+Route::delete('/penyerahan/{id}', [PenyerahanController::class, 'destroy']);
