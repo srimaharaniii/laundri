@@ -262,7 +262,7 @@
 
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="form-elements-component.html" class="waves-effect waves-dark">
+                                    <a href="{{ url('/pelanggan') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-layers"></i><b>FC</b></span>
                                         <span class="pcoded-mtext">Pelanggan</span>
                                         <span class="pcoded-mcaret"></span>
@@ -271,8 +271,8 @@
                             </ul>
 
                             <ul class="pcoded-item pcoded-left-item">
-                                <li class="active">
-                                    <a href="bs-basic-table.html" class="waves-effect waves-dark">
+                                <li class="">
+                                    <a href="{{ url('/penyerahan') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-receipt"></i><b>B</b></span>
                                         <span class="pcoded-mtext">Penyerahan</span>
                                         <span class="pcoded-mcaret"></span>
@@ -282,14 +282,14 @@
 
                             <ul class="pcoded-item pcoded-left-item">
                                 <li class="">
-                                    <a href="chart-morris.html" class="waves-effect waves-dark">
+                                    <a href="{{ url('/jenis') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-bar-chart-alt"></i><b>C</b></span>
                                         <span class="pcoded-mtext">Jenis</span>
                                         <span class="pcoded-mcaret"></span>
                                     </a>
                                 </li>
                                 <li class="">
-                                    <a href="map-google.html" class="waves-effect waves-dark">
+                                    <a href="{{ url('/pembayaran') }}" class="waves-effect waves-dark">
                                         <span class="pcoded-micon"><i class="ti-map-alt"></i><b>M</b></span>
                                         <span class="pcoded-mtext">Pembayaran</span>
                                         <span class="pcoded-mcaret"></span>
