@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
 class pembayaranController extends Controller
@@ -11,7 +12,10 @@ class pembayaranController extends Controller
      */
     public function index()
     {
-        //
+        // menampilkan data penyerahan
+        $nomor = 1;
+        $pembayaran = Pembayaran:: all();
+        return view('pembayaran.index', compact('pembayaran','nomor'));
     }
 
     /**
@@ -19,7 +23,8 @@ class pembayaranController extends Controller
      */
     public function create()
     {
-        //
+        // menampilkan form tambah
+         return view('pembayaran.form');
     }
 
     /**
@@ -27,7 +32,14 @@ class pembayaranController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses tambah
+        $pembayaran = new Pembayaran();
+        $pembayaran->penyerahan = $request->penyerahan;
+        $pembayaran->nm_jenis = $request->nm_jenis;
+        $pembayaran->berat = $request->berat;
+        $pembayaran->save();
+
+        return redirect('/pelanggan');
     }
 
     /**
