@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use Illuminate\Http\Request;
 
 class pelangganController extends Controller
@@ -11,7 +12,11 @@ class pelangganController extends Controller
      */
     public function index()
     {
-        
+        // menampilkan data penyerahan
+        $nomor = 1;
+        $pelanggan = Pelanggan:: all();
+        return view('pelanggan.index', compact('pelanggan','nomor'));
+
     }
 
     /**
@@ -19,7 +24,8 @@ class pelangganController extends Controller
      */
     public function create()
     {
-        //
+        // menampilkan form tambah
+         return view('pelanggan.form');
     }
 
     /**
@@ -27,8 +33,16 @@ class pelangganController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses tambah
+        $pelanggan = new Pelanggan();
+        $pelanggan->nm_pelanggan = $request->nm_pelanggan;
+        $pelanggan->almt_pelanggan = $request->almt_pelanggan;
+        $pelanggan->no_hp = $request->no_hp;
+        $pelanggan->save();
+
+        return redirect('/pelanggan');
     }
+
 
     /**
      * Display the specified resource.
