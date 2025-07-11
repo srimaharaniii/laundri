@@ -29,11 +29,15 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('/icon/themify-icons/themify-icons.css')}}">
     <!-- Font Awesome -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/icon/font-awesome/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-SOME-INTEGRITY-HASH" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- ico font -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/icon/icofont/css/icofont.css')}}">
     <!-- Style.css -->
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/css/jquery.mCustomScrollbar.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 
 <body>
@@ -362,6 +366,13 @@
     <script src="{{ asset('/js/vertical/vertical-layout.min.js')}}"></script>
     <script src="{{ asset('/js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
     <script type="text/javascript" src="{{ asset('/js/script.js')}}"></script>
+
+    <!-- Bootstrap 5 JS dan Popper -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
+
 </body>
 
 </html>
