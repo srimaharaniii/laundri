@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pelanggan;
 use App\Models\Penyerahan;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class penyerahanController extends Controller
     public function create()
     {
         // menampilkan form tambah
+
          return view('penyerahan.form');
     }
 
@@ -52,7 +54,7 @@ class penyerahanController extends Controller
      */
     public function show(string $id)
     {
-        //
+
     }
 
     /**
