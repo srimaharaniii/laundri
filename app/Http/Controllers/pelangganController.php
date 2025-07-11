@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pelanggan;
+
+
 use Illuminate\Http\Request;
+use App\Models\Pelanggan;
 
 class pelangganController extends Controller
 {
@@ -12,10 +14,11 @@ class pelangganController extends Controller
      */
     public function index()
     {
-        // menampilkan data penyerahan
+        // menampilkan data dosen
         $nomor = 1;
-        $pelanggan = Pelanggan:: all();
-        return view('pelanggan.index', compact('pelanggan','nomor'));
+        $pelanggan = Pelanggan::all();
+        return view('pelanggan.index',compact('pelanggan','nomor'));
+
 
     }
 
@@ -25,7 +28,7 @@ class pelangganController extends Controller
     public function create()
     {
         // menampilkan form tambah
-         return view('pelanggan.form');
+        return view('pelanggan.form');
     }
 
     /**
@@ -49,7 +52,7 @@ class pelangganController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // menampilkan data detail
     }
 
     /**
@@ -57,7 +60,9 @@ class pelangganController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // form edit
+        $pelanggan = pelanggan::find($id);
+        return view('pelanggan.edit',compact('pelanggan'));
     }
 
     /**
@@ -65,7 +70,14 @@ class pelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // proses edit
+        $pelanggan = new Pelanggan();
+        $pelanggan->nm_pelanggan = $request->nm_pelanggan;
+        $pelanggan->almt_pelanggan = $request->almt_pelanggan;
+        $pelanggan->no_hp = $request->no_hp;
+        $pelanggan->save();
+
+        return redirect('/pelanggan');
     }
 
     /**
@@ -73,6 +85,11 @@ class pelangganController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // proses hapus
+
+        $pelanggan = Pelanggan::find($id);
+        $pelanggan->delete();
+
+        return redirect('/pelanggan');
     }
 }

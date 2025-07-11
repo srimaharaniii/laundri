@@ -15,7 +15,7 @@
             <a href="/pelanggan/tambah" class="btn btn-primary btn-sm"><i class="fa fa-user-plus"></i> Tambah Data</a>
         </h3>
 
-                   <div class="card-tools">
+        <div class="card-tools">
         <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
             <i class="fas fa-minus"></i>
         </button>
@@ -26,66 +26,66 @@
     </div>
     <div class="card-body">
         <table class="table">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">nama</th>
-                        <th scope="col">alamat pelanggan</th>
-                        <th scope="col">ho_hp</th>
-                        <th scope="col">Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ( $pelanggan as $data )
+                        <thead>
                             <tr>
-                                <th scope="row">{{ $nomor++ }}</th>
-                                <td>{{$data->nama}}</td>
-                                <td>{{$data->almt_pelanggan}}</td>
-                                <td>{{$data->no_hp}}</td>
-
-                                    <a href="" class="btn btn-warning btn-sm"><i class="fa fa-info"></i></a>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama Pelanggan</th>
+                                <th scope="col">Alamat Pelanggan</th>
+                                <th scope="col">No Hp</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @forelse ( $pelanggan as $data)
+                                <tr>
+                                    <th scope="row">{{$nomor++}}</th>
+                                    <td>{{$data->nm_pelanggan}}</td>
+                                    <td>{{$data->almt_pelanggan}}</td>
+                                    <td>{{$data->no_hp}}</td>
+                                    <td>
+                                        <a href="" class="btn btn-warning btn-sm"><i class="fa fa-info"></i></a>
                                         <a href="/pelanggan/edit/{{$data->id}}" class="btn btn-info btn-sm"><i class="fa fa-pen"></i></a>
 
-                                    <!-- Button trigger modal -->
-                                        <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal{{$data->id}}">
-                                        <i class="fa fa-trash"></i>
-                                        </button>
 
-                                        <!-- Modal -->
-                                        <div class="modal fade" id="exampleModal{{$data->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="exampleModalLabel">Peringatan</h1>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body">
-                                                Yakin Data pelanggan a.n. {{$data->nama}} ingin dihapus?
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                                                <form action="penyeeahan/{{$data->id}}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger">Hapus</button>
-                                                </form>
-                                </td>
 
-                            </tr>
+                                      <!-- Tombol Delete dengan modal unik per ID -->
+<button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{$data->id}}">
+    <i class="fa fa-trash"></i>
+</button>
 
-                        @empty
-                            <tr>
-                                <th colspan="5" scope="row">Data Tidak Ada</th>
-                            </tr>
-
-                        @endforelse
-
-                    </tbody>
-                  </table>
-
-                </div>
+<!-- Modal unik untuk setiap baris -->
+<div class="modal fade" id="deleteModal{{$data->id}}" tabindex="-1" aria-labelledby="deleteModalLabel{{$data->id}}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteModalLabel{{$data->id}}">Konfirmasi Hapus</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+                Yakin ingin menghapus data pelanggan <strong>{{ $data->nm_pelanggan }}</strong>?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <form action="{{ url('/pelanggan' . $data->id) }}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Hapus</button>
+                </form>
             </div>
         </div>
     </div>
 </div>
+
+                    </td>
+                </tr>
+                @empty
+                <tr>
+                    <td colspan="5" class="text-center">Data tidak tersedia.</td>
+                </tr>
+                @endforelse
+
+                        </tbody>
+                    </table>
+    </div>
+
 @endsection

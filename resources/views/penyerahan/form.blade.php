@@ -13,10 +13,12 @@
                     <div class="card-body">
                         <form action="/penyerahan" method="post" enctype="multipart/form-data">
                             @csrf
-                            <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Pelanggan</label>
-                                <input type="text" name="pelanggan" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            </div>
+                            <label for="exampleInputPassword1" class="form-label">nama pelanggan</label>
+                            <select name="rumpun" id="" class="form-control">
+                                <option value="">-Pilih nama pelanggan-</option>
+                                @foreach ($penyerahan as $item)
+                                    <option value="{{$item->id}}">{{$item->nama}}</option>
+                                @endforeach
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">jenis</label>
                                 <input type="text" name="jenis" class="form-control" id="exampleInputPassword1">
