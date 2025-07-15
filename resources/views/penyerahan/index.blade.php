@@ -29,8 +29,8 @@
                         <thead>
                             <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Pelanggan</th>
-                                <th scope="col">Jenis</th>
+                                <th scope="col">nama Pelanggan</th>
+                                <th scope="col">nama Jenis</th>
                                 <th scope="col">Tgl Penyerahan</th>
                                 <th scope="col">Tgl Selesai</th>
                                 <th scope="col">Tgl Pengambilan</th>
@@ -43,8 +43,8 @@
                             @forelse ( $penyerahan as $data)
                                 <tr>
                                     <th scope="row">{{$nomor++}}</th>
-                                    <td>{{$data->pelanggan}}</td>
-                                    <td>{{$data->jenis}}</td>
+                                    <td>{{$data->pelanggans->nm_pelanggan}}</td>
+                                    <td>{{$data->jenis->nm_jenis}}</td>
                                     <td>{{$data->tgl_penyerahan}}</td>
                                     <td>{{$data->tgl_selesai}}</td>
                                     <td>{{$data->tgl_pengambilan}}</td>
@@ -74,7 +74,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <form action="{{ url('/penyerahan' . $data->id) }}" method="POST">
+                <form action="penyerahan/{{ $data->id }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Hapus</button>
