@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Jenis;
 use Illuminate\Http\Request;
+use App\Models\Pelanggan;
 
 class jenisController extends Controller
 {
@@ -11,7 +13,12 @@ class jenisController extends Controller
      */
     public function index()
     {
-        //
+        // menampilkan data dosen
+        $nomor = 1;
+        $jenis = Jenis::all();
+        return view('jenis.index',compact('jenis','nomor'));
+
+
     }
 
     /**
@@ -19,7 +26,8 @@ class jenisController extends Controller
      */
     public function create()
     {
-        //
+        // menampilkan form tambah
+        return view('jenis.form');
     }
 
     /**
@@ -27,15 +35,22 @@ class jenisController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // proses tambah
+        $jenis = new Jenis();
+        $jenis->nm_jenis = $request->nm_jenis;
+        $jenis->harga = $request->harga;
+        $jenis->save();
+
+        return redirect('/jenis');
     }
+
 
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        // menampilkan data detail
     }
 
     /**
@@ -43,7 +58,9 @@ class jenisController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // form edit
+        $jenis = Jenis::find($id);
+        return view('jenis.edit',compact('jenis'));
     }
 
     /**
@@ -51,7 +68,13 @@ class jenisController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // proses edit
+        $jenis = new Jenis();
+        $jenis->nm_jenis = $request->nm_jenis;
+        $jenis->harga = $request->harga;
+        $jenis->save();
+
+        return redirect('/jenis');
     }
 
     /**
@@ -59,6 +82,12 @@ class jenisController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // proses hapus
+
+        $jenis = Jenis::find($id);
+        $jenis->delete();
+
+        return redirect('/jenis');
     }
+
 }
