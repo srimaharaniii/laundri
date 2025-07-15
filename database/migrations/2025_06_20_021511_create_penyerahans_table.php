@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('penyerahans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('pelanggans_id');
-            $table->bigInteger('jenis_id');
+            $table->unsignedBigInteger('pelanggans_id');
+            $table->unsignedBigInteger('jenis_id');
             $table->date('tgl_penyerahan');
-            $table->date('tgl_tgl selesai');
+            $table->date('tgl_selesai');
             $table->date('tgl_pengambilan');
             $table->string('harga');
             $table->string('berat');

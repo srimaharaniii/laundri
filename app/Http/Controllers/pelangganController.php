@@ -89,7 +89,7 @@ class pelangganController extends Controller
 
         $pelanggan = Pelanggan::find($id);
         $pelanggan->delete();
-
         return redirect('/pelanggan');
     }
+
 }
