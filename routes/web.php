@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\jenisController;
 use App\Http\Controllers\pelangganController;
 use App\Http\Controllers\pembayaranController;
 use App\Http\Controllers\penyerahanController;
@@ -57,3 +58,11 @@ Route::post('/pembayaran', [pembayaranController::class, 'store']);
 Route::get('/pembayaran/edit/{id}', [pembayaranController::class, 'edit']);
 Route::put('/pembayaran/{id}', [pembayaranController::class, 'update']);
 Route::delete('/pembayaran/{id}', [pembayaranController::class, 'destroy']);
+
+// Data jenis
+Route::get('/jenis',[jenisController::class,'index']);
+Route::get('/jenis/tambah', [jenisController::class, 'create']);
+Route::post('/jenis', [jenisController::class, 'store']);
+Route::get('/jenis/edit/{id}', [jenisController::class, 'edit']);
+Route::put('/jenis/{id}', [jenisController::class, 'update']);
+Route::delete('/jenis/{id}', [jenisController::class, 'destroy']);
