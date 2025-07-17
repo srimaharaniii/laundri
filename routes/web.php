@@ -26,8 +26,8 @@ Route::get('/home', function () {
     return view('home');
 })->middleware('auth');
 
-Route::get('/cektemplate', function () {
-    return view('layouts.template');
+Route::get('/dashboard', function () {
+    return view('home');
 });
 
 

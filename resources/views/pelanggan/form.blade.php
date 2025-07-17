@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Form Data pelanggan') }}
                 </div>
+                
 
                 <div class="card-body">
 

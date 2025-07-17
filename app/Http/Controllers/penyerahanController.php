@@ -15,7 +15,7 @@ class penyerahanController extends Controller
      */
     public function index()
     {
-        // menampilkan data dosen
+        // menampilkan data penyerahan
         $nomor = 1;
         $penyerahan = Penyerahan::all();
         return view('penyerahan.index',compact('penyerahan','nomor'));

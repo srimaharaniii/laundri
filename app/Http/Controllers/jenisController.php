@@ -69,7 +69,7 @@ class jenisController extends Controller
     public function update(Request $request, string $id)
     {
         // proses edit
-        $jenis = new Jenis();
+        $jenis = Jenis::find($id);
         $jenis->nm_jenis = $request->nm_jenis;
         $jenis->harga = $request->harga;
         $jenis->save();

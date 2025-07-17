@@ -11,8 +11,10 @@
                 <div class="card-body">
 
                     <div class="card-body">
-                        <form action="/jenis" method="post" enctype="multipart/form-data">
-                            @csrf
+                        <form method="POST" action="/jenis/{{$jenis->id}}" enctype="multipart/form-data">
+
+                        @csrf
+                        @method('PUT')
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">nama jenis</label>
                                 <select name="nm_jenis" id="" class="form-control">

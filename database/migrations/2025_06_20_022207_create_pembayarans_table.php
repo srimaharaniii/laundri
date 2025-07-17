@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('pembayarans', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('penyerahans_id');
-            $table->string('nm_jenis');
+            $table->string('nm_pelanggan');
             $table->string('berat');
             $table->string('harga');
-            $table->string('total_bayar');
-            $table->string('tunai');
-            $table->string('kembali');
+            $table->string('total');
             $table->timestamps();
         });
     }
